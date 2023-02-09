@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://www.xuge.site:3306/hmdp?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  redis:
+    host: www.xuge.site
+    port: 6379
+    password: 609483
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+    database: 1
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.hmdp: debug
